@@ -18,7 +18,7 @@
   position: relative;
   padding: var(--border);
   /* box-shadow: 0px 0px 16px 0px #cfecff; */
-  @apply m-auto mt-25 text-white; 
+  @apply m-auto mt-25 text-white;
 }
 .card::before,
 .card::after {
