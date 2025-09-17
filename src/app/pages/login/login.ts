@@ -23,7 +23,6 @@ export class Login {
     this.employeeService.onLogin(this.loginObj).subscribe({
       next:(result: any) => {
         if (result.result) {
-          alert("Login Successful");
           localStorage.setItem('leaveUser', JSON.stringify(result.data));
           this.router.navigate(['/dashboard']);
         }
