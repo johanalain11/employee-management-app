@@ -1,6 +1,8 @@
-<div class="flex flex-row min-h-screen w-full">
-  <app-sidebar></app-sidebar>
-  <div class="w-full">
+<div class="flex flex-row min-h-screen relative w-full">
+  <div class="fixed">
+    <app-sidebar></app-sidebar>
+  </div>
+  <div class="w-full ml-64">
     <router-outlet></router-outlet>
   </div>
 </div>

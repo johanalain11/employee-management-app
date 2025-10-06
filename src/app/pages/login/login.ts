@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginModel } from '../../models/loginModel';
 import { FormsModule } from '@angular/forms';
-import { Employee } from '../../services/employee';
+import { EmployeeService } from '../../services/employee';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +13,7 @@ import { Employee } from '../../services/employee';
 })
 export class Login {
   private router = inject(Router);
-  employeeService = inject(Employee);
+  employeeService = inject(EmployeeService);
 
   home() {
     this.router.navigate(['/']);
