@@ -1,10 +1,11 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { EmployeeService } from '../../services/employee';
 import { APIResponseModel, EmployeeModel } from '../../models/employeeModel';
+import { Loader } from '../../components/loader/loader';
 
 @Component({
   selector: 'app-employee',
-  imports: [],
+  imports: [Loader],
   templateUrl: './employee.html',
   styleUrl: './employee.css'
 })
