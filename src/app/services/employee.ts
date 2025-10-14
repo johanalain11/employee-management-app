@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { APIResponseModel } from '../models/employeeModel';
 
 @Injectable({
@@ -17,6 +17,22 @@ export class EmployeeService {
 
   getEmployees(): Observable<APIResponseModel> {
     return this.http.get<APIResponseModel>(`${this.baseUrl}/GetEmployees`);
+  }
+
+  getDepartments() {
+    return this.http.get(`${this.baseUrl}/GetDepartments`).pipe(
+      map((response: any) => response.data)
+    );
+  }
+
+  getRoles(): Observable<any[]> {
+    return this.http.get(`${this.baseUrl}/GetAllRoles`).pipe(
+      map((response: any) => response.data)
+    );
+  }
+
+  addEmployee(obj: any) {
+    return this.http.post(`${this.baseUrl}/CreateEmployee`, obj)
   }
 
 }
