@@ -3,11 +3,11 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms'
 import { EmployeeService } from '../../services/employee';
 import { Loader } from '../../components/loader/loader';
 import { LeaveClass, LeaveModel } from '../../models/leaveModel';
-import { APIResponseModel } from '../../models/employeeModel';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-leaves',
-  imports: [ReactiveFormsModule, Loader],
+  imports: [ReactiveFormsModule, Loader, DatePipe],
   templateUrl: './leaves.html',
   styleUrl: './leaves.css'
 })
@@ -31,7 +31,7 @@ export class Leaves implements OnInit{
     leaveType: new FormControl(''),
     details: new FormControl(''),
     isApproved: new FormControl(false),
-    approvedDate: new FormControl(new Date()),
+    approvedDate: new FormControl(''),
   })
 
   constructor() {
@@ -77,6 +77,7 @@ export class Leaves implements OnInit{
           this.loadLeaves();
         } else {
           alert(res.message);
+          console.log(formValue)
           console.log(res);
         }
       },
@@ -85,5 +86,6 @@ export class Leaves implements OnInit{
       }
     })
   }
+
 
 }
