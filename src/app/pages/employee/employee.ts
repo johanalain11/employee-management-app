@@ -60,12 +60,14 @@ export class Employee implements OnInit{
       next:(res:any)=>{
         if(res.result) {
           alert("Employee Created Success")
+          this.closeModal();
+          this.getEmployees();
         } else {
           alert(res.message)
         }
       },
-      error:()=>{
-
+        error:()=>{
+        alert('Error while adding employee!');
       }
     })
   }

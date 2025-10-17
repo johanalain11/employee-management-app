@@ -35,4 +35,14 @@ export class EmployeeService {
     return this.http.post(`${this.baseUrl}/CreateEmployee`, obj)
   }
 
+  getAllLeavesByEmployeeId(empId: number) {
+    return this.http.get(`${this.baseUrl}/GetAllLeavesByEmployeeId?id=${empId}`).pipe(
+      map((response: any) => response.data)
+    );
+  }
+
+  addLeave(obj: any) {
+    return this.http.post(`${this.baseUrl}/AddLeave`, obj);
+  }
+
 }

@@ -4,8 +4,7 @@
     <button class="bg-blue-500 text-white px-4 mr-4 rounded" (click)="openModal()">Add leave</button>
   </div>
 
-
-  <div #newModal class="hidden max-w-3xl bg-white p-3 rounded-lg shadow-2xl mb-6 fixed inset-0 top-20 left-1/2 transform -translate-x-1/2 z-50" role="dialog" aria-modal="true">
+  <form [formGroup]="leaveForm" #newModal class="hidden max-w-3xl bg-white p-3 rounded-lg shadow-2xl mb-6 fixed inset-0 top-20 left-1/2 transform -translate-x-1/2 z-50" role="dialog" aria-modal="true">
     <div class="flex justify-between items-center mb-6 text-2xl">
       <h2 class="font-bold text-gray-700">Add Leave Request</h2>
       <button type="button" class="text-gray-500 bg-gray-100 font-extralight mr-2 px-2 py-1 rounded-lg transition ease-in-out duration-300 hover:text-white hover:bg-red-500 hover:scale-105 hover:font-light" (click)="closeModal()">X</button>
@@ -14,38 +13,99 @@
     <div class="grid grid-cols-1 md:grid-cols-2">
       <div class="p-4 overflow-y-auto">
         <label for="input-label" class="block text-sm font-medium mb-2">Leave Type</label>
-        <select id="input-label" class="py-3 px-4 block w-full rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 border-1 border-neutral-300 placeholder-neutral-500 text-neutral-500" autofocus="">
+        <select id="input-label" formControlName="leaveType" class="py-3 px-4 block w-full rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 border-1 border-neutral-300 placeholder-neutral-500 text-neutral-500" autofocus="">
           <option value="" disabled >Select Leave Type</option>
+          <option value="Sick Leave">Sick Leave</option>
+          <option value="Casual Leave">Casual Leave</option>
+          <option value="Earned Leave">Earned Leave</option>
+          <option value="Annual Leave">Annual Leave</option>
+          <option value="Personal Leave">Personal Leave</option>
+          <option value="Maternity Leave">Maternity Leave</option>
+          <option value="Emergency Leave">Emergency Leave</option>
         </select>
       </div>
       <div class="p-4 overflow-y-auto col-start-1">
         <label for="input-label" class="block text-sm font-medium mb-2">From Date</label>
-        <input type="date" id="input-label" class="py-3 px-4 block w-full rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 border-1 border-neutral-300 placeholder-neutral-500 text-neutral-500" placeholder="123-456-7890" autofocus="">
+        <input type="date" id="input-label" formControlName="fromDate" class="py-3 px-4 block w-full rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 border-1 border-neutral-300 placeholder-neutral-500 text-neutral-500" placeholder="123-456-7890" autofocus="">
       </div>
       <div class="p-4 overflow-y-auto">
         <label for="input-label" class="block text-sm font-medium mb-2">To Date</label>
-        <input type="date" id="input-label" class="py-3 px-4 block w-full rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 border-1 border-neutral-300 placeholder-neutral-500 text-neutral-500" placeholder="you@site.com" autofocus="">
+        <input type="date" id="input-label" formControlName="toDate" class="py-3 px-4 block w-full rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 border-1 border-neutral-300 placeholder-neutral-500 text-neutral-500" placeholder="you@site.com" autofocus="">
       </div>
       <div class="p-4 overflow-y-auto col-span-2">
         <label for="input-label" class="block text-sm font-medium mb-2">Number of Days</label>
-        <input type="number" id="input-label" class="py-3 px-4 block w-full rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 border-1 border-neutral-300 placeholder-neutral-500 text-neutral-500" placeholder="********" autofocus="">
+        <input type="number" id="input-label" formControlName="noOfDays" class="py-3 px-4 block w-full rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 border-1 border-neutral-300 placeholder-neutral-500 text-neutral-500" placeholder="********" autofocus="">
       </div>
       <div class="p-4 overflow-y-auto col-span-2">
         <label for="input-label" class="block text-sm font-medium mb-2">Details/ Reason</label>
-        <input type="text" id="input-label" class="py-3 px-4 block w-full rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 border-1 border-neutral-300 placeholder-neutral-500 text-neutral-500" placeholder="********" autofocus="">
+        <input type="text" id="input-label" formControlName="details" class="py-3 px-4 block w-full rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 border-1 border-neutral-300 placeholder-neutral-500 text-neutral-500" placeholder="********" autofocus="">
       </div>
       <div class="p-4 overflow-y-auto col-span-2 text-end">
-        <button type="button" class="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-white bg-blue-600 hover:bg-blue-700 focus:outline-hidden hover:scale-105 transition ease-in-out duration-300 focus:ring-4 focus:ring-blue-300 disabled:opacity-50 disabled:pointer-events-none px-5 py-3 dark:focus:ring-blue-900">Add Leave</button>
+        <button type="button" class="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-white bg-blue-600 hover:bg-blue-700 focus:outline-hidden hover:scale-105 transition ease-in-out duration-300 focus:ring-4 focus:ring-blue-300 disabled:opacity-50 disabled:pointer-events-none px-5 py-3 dark:focus:ring-blue-900" (click)="onSaveLeave()">Add Leave</button>
       </div>
     </div>
 
 
-  </div>
+  </form>
 
   <div #tableContainer class="bg-white p-6 rounded shadow-xl">
     <div class="tabs tabs-lift">
       <input type="radio" name="my_tabs_3" class="tab bg-blue-100 border-0 px-3" aria-label="Tab 1" checked="checked"  />
-      <div class="tab-content bg-blue-50 p-6 shadow">Tab content 1</div>
+      <div class="tab-content bg-blue-50 p-6 shadow">
+          Leave List
+          <div class="flex flex-col mt-5">
+            @if(leaveList.length > 0) {
+            <div class="-m-1.5 overflow-x-auto">
+              <div class="p-1.5 min-w-full inline-block align-middle">
+                <div class="border border-gray-200 rounded-lg overflow-hidden ">
+                  <table class="min-w-full divide-y divide-gray-200">
+                    <thead>
+                      <tr>
+                        <th scope="col" class="px-4 py-3 text-start text-xs font-medium text-gray-500 uppercase">Id</th>
+                        <th scope="col" class="px-4 py-3 text-start text-xs font-medium text-gray-500 uppercase">Employee Id</th>
+                        <th scope="col" class="px-4 py-3 text-start text-xs font-medium text-gray-500 uppercase">No of Days</th>
+                        <th scope="col" class="px-4 py-3 text-start text-xs font-medium text-gray-500 uppercase">Is Approved</th>
+                        <th scope="col" class="px-4 py-3 text-start text-xs font-medium text-gray-500 uppercase">Details</th>
+                        <th scope="col" class="px-4 py-3 text-start text-xs font-medium text-gray-500 uppercase">From Date</th>
+                        <th scope="col" class="px-4 py-3 text-start text-xs font-medium text-gray-500 uppercase">To Date</th>
+                        <th scope="col" class="px-4 py-3 text-start text-xs font-medium text-gray-500 uppercase">Approved Date</th>
+                        <th scope="col" class="px-4 py-3 text-end text-xs font-medium text-gray-500 uppercase">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+
+                      @for(leave of leaveList; track $index) {
+                      <tr>
+                        <td class="px-4 py-4 whitespace-nowrap text-sm font-medium text-gray-800">{{ leave.leaveId }}</td>
+                        <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-800">{{ leave.employeeId }}</td>
+                        <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-800">{{ leave.noOfDays }}</td>
+                        <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-800">{{ leave.isApproved }}</td>
+                        <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-800">{{ leave.details }}</td>
+                        <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-800">{{ leave.fromDate }}</td>
+                        <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-800">{{ leave.toDate }}</td>
+                        <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-800">{{ leave.approvedDate }}</td>
+                        <td class="px-4 py-4 whitespace-nowrap text-end text-sm font-medium">
+                          <button type="button"
+                            class="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 focus:outline-hidden hover:scale-105 transition ease-in-out duration-300 focus:text-blue-800 disabled:opacity-50 disabled:pointer-events-none bg-blue-100 p-1 dark:text-blue-500 dark:hover:text-blue-400 dark:focus:text-blue-400">Edit</button>
+                          |
+                          <button type="button"
+                            class="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 focus:outline-hidden hover:scale-105 transition ease-in-out duration-300 focus:text-blue-800 disabled:opacity-50 disabled:pointer-events-none bg-red-100 p-1 dark:text-red-500 dark:hover:text-red-400 dark:focus:text-red-400">Delete</button>
+                        </td>
+                      </tr>
+                      }
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            } @else {
+            <div class="flex justify-center my-5">
+              <app-loader></app-loader>
+            </div>
+            }
+          </div>
+      </div>
 
       <input type="radio" name="my_tabs_3" class="tab bg-cyan-100 border-0 px-3" aria-label="Tab 2" />
       <div class="tab-content bg-cyan-50 p-6 shadow-lg">Tab content 2</div>
