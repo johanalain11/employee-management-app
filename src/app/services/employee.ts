@@ -41,8 +41,22 @@ export class EmployeeService {
     );
   }
 
+  getLeavesForApprovalBySupervisorId(supervisorId: number) {
+    return this.http.get(`${this.baseUrl}/GetLeavesForApprovalBySuperwiserId?id=${supervisorId}`).pipe(
+      map((response: any) => response.data)
+    );
+  }
+
   addLeave(obj: any) {
     return this.http.post(`${this.baseUrl}/AddLeave`, obj);
+  }
+
+  approveLeave(leaveId: number) {
+    return this.http.get(`${this.baseUrl}/ApproveLeave?id=${leaveId}`);
+  }
+
+  rejectLeave(leaveId: number) {
+    return this.http.get(`${this.baseUrl}/RejectLeave?id=${leaveId}`);
   }
 
 }

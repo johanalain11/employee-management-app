@@ -17,9 +17,11 @@ export class Leaves implements OnInit{
   employeeService = inject(EmployeeService);
 
   leaveList: LeaveModel[] = [];
+  leaveApprovalList: LeaveModel[] = [];
 
   ngOnInit() {
     this.loadLeaves();
+    this.loadLeaveApprovals();
   }
 
   leaveForm: FormGroup = new FormGroup({
@@ -67,6 +69,18 @@ export class Leaves implements OnInit{
     })
   }
 
+  loadLeaveApprovals() {
+    const empId = this.leaveForm.controls['employeeId'].value;
+    this.employeeService.getLeavesForApprovalBySupervisorId(empId).subscribe({
+      next: (response: any) => {
+        this.leaveApprovalList = response;
+      },
+      error: () => {
+        alert('Error while fetching the records!!');
+      }
+    })
+  }
+
   onSaveLeave() {
     const formValue: LeaveClass = this.leaveForm.value;
     this.employeeService.addLeave(formValue).subscribe({
@@ -87,5 +101,38 @@ export class Leaves implements OnInit{
     })
   }
 
+  approveLeave(leaveId: number) {
+    this.employeeService.approveLeave(leaveId).subscribe({
+      next: (res:any) => {
+        if(res.result) {
+          alert('Leave Approved Successfully');
+          this.loadLeaves();
+        } else {
+          alert(res.message);
+          console.log(res);
+        }
+      },
+      error: () => {
+        alert('Error while approving leave!');
+      }
+    })
+  }
+
+  rejectLeave(leaveId: number) {
+    this.employeeService.rejectLeave(leaveId).subscribe({
+      next: (res:any) => {
+        if(res.result) {
+          alert('Leave Rejected Successfully');
+          this.loadLeaves();
+        } else {
+          alert(res.message);
+          console.log(res);
+        }
+      },
+      error: () => {
+        alert('Error while rejecting leave!');
+      }
+    })
+  }
 
 }
