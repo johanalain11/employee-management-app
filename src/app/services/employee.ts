@@ -35,6 +35,10 @@ export class EmployeeService {
     return this.http.post(`${this.baseUrl}/CreateEmployee`, obj)
   }
 
+  updateEmployee(obj: any) {
+    return this.http.put(`${this.baseUrl}/UpdateEmployee`, obj)
+  }
+
   getAllLeavesByEmployeeId(empId: number) {
     return this.http.get(`${this.baseUrl}/GetAllLeavesByEmployeeId?id=${empId}`).pipe(
       map((response: any) => response.data)

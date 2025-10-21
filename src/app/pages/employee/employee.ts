@@ -14,6 +14,8 @@ import { FormsModule } from '@angular/forms';
 })
 export class Employee implements OnInit{
 
+  modalTitle = '';
+
   employees: EmployeeModel[] = [];
   employeeService = inject(EmployeeService);
 
@@ -41,7 +43,8 @@ export class Employee implements OnInit{
     })
   }
 
-  openModal() {
+  openModal(title: string) {
+    this.modalTitle = title;
     if(this.newModal) {
       this.newModal.nativeElement.style.display = "block";
       this.tableContainer.nativeElement.style.opacity = "0.5";
@@ -70,6 +73,27 @@ export class Employee implements OnInit{
         alert('Error while adding employee!');
       }
     })
+  }
+
+  onUpdateEmployee(employee: EmployeeModel) {
+    this.openModal('Edit');
+
+    this.employeeObj.employeeId = employee.employeeId;
+    this.employeeObj.employeeName = employee.employeeName;
+    this.employeeObj.contactNo = employee.contactNo;
+    this.employeeObj.deptId = Number(employee.deptId);
+    this.employeeObj.emailId = employee.emailId;
+    this.employeeObj.gender = employee.gender;
+    this.employeeObj.role = employee.role;
+    this.employeeObj.gender = 'Male';
+
+    // To be implemented
+  }
+
+  onEditEmployee() {}
+
+  onDeleteEmployee(empId: number) {
+
   }
 
 }

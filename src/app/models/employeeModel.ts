@@ -7,10 +7,11 @@ export interface APIResponseModel {
 export interface EmployeeModel {
   employeeId: number;
   employeeName: string;
-  deptId: string;
-  deptName: string;
   contactNo: string;
   emailId: string;
+  deptId: string;
+  deptName: string;
+  gender: string;
   role: string;
 }
 
