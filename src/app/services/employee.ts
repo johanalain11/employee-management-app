@@ -39,6 +39,10 @@ export class EmployeeService {
     return this.http.put(`${this.baseUrl}/UpdateEmployee`, obj)
   }
 
+  deleteEmployee(empId: number) {
+    return this.http.delete(`${this.baseUrl}/DeleteEmployee?id=${empId}`);
+  }
+
   getAllLeavesByEmployeeId(empId: number) {
     return this.http.get(`${this.baseUrl}/GetAllLeavesByEmployeeId?id=${empId}`).pipe(
       map((response: any) => response.data)

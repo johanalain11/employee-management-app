@@ -81,19 +81,46 @@ export class Employee implements OnInit{
     this.employeeObj.employeeId = employee.employeeId;
     this.employeeObj.employeeName = employee.employeeName;
     this.employeeObj.contactNo = employee.contactNo;
-    this.employeeObj.deptId = Number(employee.deptId);
     this.employeeObj.emailId = employee.emailId;
+    this.employeeObj.deptId = Number(employee.deptId);
+    this.employeeObj.password = '';
     this.employeeObj.gender = employee.gender;
     this.employeeObj.role = employee.role;
-    this.employeeObj.gender = 'Male';
-
-    // To be implemented
   }
 
-  onEditEmployee() {}
+  onEditEmployee() {
+    this.employeeService.updateEmployee(this.employeeObj).subscribe({
+      next:(res:any)=>{
+        if(res.result) {
+          alert("Employee Updated Success")
+          this.closeModal();
+          this.getEmployees();
+        } else {
+          alert(res.message)
+        }
+      },
+        error:()=>{
+        alert('Error while updating employee!');
+      }
+    })
+  }
 
-  onDeleteEmployee(empId: number) {
-
+  onDeleteEmployee(empId: number, empName: string) {
+    if(confirm(`Are you sure to delete employee: ${empName} ?`)) {
+      this.employeeService.deleteEmployee(empId).subscribe({
+        next:(res:any)=>{
+          if(res.result) {
+            alert("Employee Deleted Success")
+            this.getEmployees();
+          } else {
+            alert(res.message)
+          }
+        },
+          error:()=>{
+          alert('Error while deleting employee!');
+        }
+      })
+    }
   }
 
 }
