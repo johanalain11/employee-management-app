@@ -5,6 +5,7 @@ import { Dashboard } from './pages/dashboard/dashboard';
 import { Employee } from './pages/employee/employee';
 import { Leaves } from './pages/leaves/leaves';
 import { Home } from './pages/home/home';
+import { About } from './pages/about/about';
 
 export const routes: Routes = [
   {
@@ -15,6 +16,10 @@ export const routes: Routes = [
   {
     path:'home',
     component: Home
+  },
+  {
+    path:'about',
+    component: About
   },
   {
     path: 'login',
