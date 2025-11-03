@@ -19,13 +19,6 @@ export class EmployeeService {
     return this.http.get<APIResponseModel>(`${this.baseUrl}/GetEmployees`);
   }
 
-  getEmployeesNumber() {
-    let employees: any = this.http.get(`${this.baseUrl}/GetEmployeesNumber`).pipe(
-      map((response: any) => response.data)
-    );
-    return employees.length;
-  }
-
   getDepartments() {
     return this.http.get(`${this.baseUrl}/GetDepartments`).pipe(
       map((response: any) => response.data)
