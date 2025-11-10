@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+#chart {
+  @apply p-4 rounded-lg shadow-md max-w-2xl bg-blue-50;
+}

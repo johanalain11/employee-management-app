@@ -3,10 +3,11 @@ import { Component, OnInit } from '@angular/core';
 import { EmployeeModel, APIResponseModel } from '../../models/employeeModel';
 import { EmployeeService } from '../../services/employee';
 import { LeaveModel } from '../../models/leaveModel';
+import { Chart1 } from '../../components/chart1/chart1';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [DashboardCard],
+  imports: [DashboardCard, Chart1],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css'
 })

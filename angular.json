@@ -34,7 +34,7 @@
               "node_modules/nouislider/dist/nouislider.min.js",
               "node_modules/datatables.net/js/dataTables.min.js",
               "node_modules/vanilla-calendar-pro/index.js",
-
+              "node_modules/apexcharts/dist/apexcharts.min.js",
               "node_modules/preline/dist/index.js"
             ]
           },
