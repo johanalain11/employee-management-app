@@ -9,8 +9,8 @@
     <app-dashboard-card name="Leaves Pending Approval" [count]="leavePendingCount"></app-dashboard-card>
     <app-dashboard-card name="Leaves Approved" [count]="leaveApprovedCount"></app-dashboard-card>
   </div>
-  <div class="px-5">
-    <app-chart1></app-chart1>
+  <div class="px-6">
+    <app-chart1 [employeeNumber]="employeeCount" [leaveNumber]="leaveCount"></app-chart1>
   </div>
 </div>
 

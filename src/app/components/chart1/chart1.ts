@@ -1,4 +1,5 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, Input } from '@angular/core';
+import { NgApexchartsModule } from 'ng-apexcharts';
 
 import {
   ChartComponent,
@@ -19,8 +20,6 @@ export type ChartOptions = {
   dataLabels: ApexDataLabels;
 };
 
-import { NgApexchartsModule } from 'ng-apexcharts';
-
 @Component({
   selector: 'app-chart1',
   imports: [NgApexchartsModule],
@@ -31,17 +30,19 @@ export class Chart1 {
 
   @ViewChild("chart") chart = new ChartComponent;
   public chartOptions: Partial<ChartOptions>;
+  @Input() employeeNumber: number = 0;
+  @Input() leaveNumber: number = 0;
 
   constructor() {
     this.chartOptions = {
       series: [
         {
-          name: "series1",
-          data: [31, 40, 28, 51, 42, 109, 100]
+          name: "Employees",
+          data: [0, this.employeeNumber]
         },
         {
-          name: "series2",
-          data: [11, 32, 45, 32, 34, 52, 41]
+          name: "Leaves",
+          data: [0, this.leaveNumber]
         }
       ],
       chart: {
@@ -49,21 +50,16 @@ export class Chart1 {
         type: "area"
       },
       dataLabels: {
-        enabled: false
+        enabled: true
       },
       stroke: {
         curve: "smooth"
       },
       xaxis: {
-        type: "datetime",
+        type: "category",
         categories: [
-          "2018-09-19T00:00:00.000Z",
-          "2018-09-19T01:30:00.000Z",
-          "2018-09-19T02:30:00.000Z",
-          "2018-09-19T03:30:00.000Z",
-          "2018-09-19T04:30:00.000Z",
-          "2018-09-19T05:30:00.000Z",
-          "2018-09-19T06:30:00.000Z"
+          "01-01-2025",
+          "Today"
         ]
       },
       tooltip: {
