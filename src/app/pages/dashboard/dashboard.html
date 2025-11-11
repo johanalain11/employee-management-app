@@ -1,6 +1,6 @@
 <div class="my-5 mx-6">
-  <div class="flex justify-between sticky top-0 backdrop-blur-2xl py-3 w-full mb-8">
-    <p class="text-4xl font-bold ml-3">Dashboard</p>
+  <div class="flex z-20 justify-between sticky top-0 backdrop-blur-2xl py-3 w-full mb-8">
+    <p class="text-4xl ml-3 font-bold text-center md:text-start w-full">Dashboard</p>
     <button class="bg-blue-500 text-white px-4 mr-4 rounded">Button</button>
   </div>
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 space-x-5 px-5 w-full justify-between lg:justify-evenly items-center">
@@ -9,7 +9,7 @@
     <app-dashboard-card name="Leaves Pending Approval" [count]="leavePendingCount()"></app-dashboard-card>
     <app-dashboard-card name="Leaves Approved" [count]="leaveApprovedCount()"></app-dashboard-card>
   </div>
-  <div class="px-6 flex flex-col lg:flex-row gap-5 w-full">
+  <div class="px-6 flex flex-wrap gap-5 w-full">
     <app-chart1 [employeeNumber]="employeeCount()" [leaveNumber]="leaveCount()"></app-chart1>
     <app-chart2 [leaveNumber]="leaveCount()" [leavesApprovedNumber]="leaveApprovedCount()" [leavesPendingNumber]="leavePendingCount()"></app-chart2>
   </div>
