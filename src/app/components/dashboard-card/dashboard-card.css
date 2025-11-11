@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 .card {
-  @apply h-36 shadow-md rounded-lg p-6 max-w-xs mb-5 text-white;
+  @apply h-fit min-h-28 lg:h-42 relative text-4xl shadow-md rounded-lg p-6 w-full md:max-w-xs mb-5 text-white hover:scale-105 hover:text-5xl hover:text-amber-300 transition ease-in-out duration-300;
 }
 
 .card p {
@@ -9,7 +9,7 @@
 }
 
 .card span {
-  @apply text-4xl text-end font-bold block mt-2 mr-3;
+  @apply text-end font-bold block mt-2 mr-3 absolute bottom-5 right-3;
 }
 @property --num {
   syntax: '<integer>';

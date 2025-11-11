@@ -4,10 +4,11 @@ import { EmployeeModel, APIResponseModel } from '../../models/employeeModel';
 import { EmployeeService } from '../../services/employee';
 import { LeaveModel } from '../../models/leaveModel';
 import { Chart1 } from '../../components/chart1/chart1';
+import { Chart2 } from '../../components/chart2/chart2';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [DashboardCard, Chart1],
+  imports: [DashboardCard, Chart1, Chart2],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css'
 })

@@ -3,14 +3,15 @@
     <p class="text-4xl font-bold ml-3">Dashboard</p>
     <button class="bg-blue-500 text-white px-4 mr-4 rounded">Button</button>
   </div>
-  <div class="flex flex-wrap space-x-5 w-full justify-between lg:justify-evenly items-center">
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 space-x-5 px-5 w-full justify-between lg:justify-evenly items-center">
     <app-dashboard-card name="Employee Number" [count]="employeeCount()"></app-dashboard-card>
     <app-dashboard-card name="Leaves Submitted" [count]="leaveCount()"></app-dashboard-card>
     <app-dashboard-card name="Leaves Pending Approval" [count]="leavePendingCount()"></app-dashboard-card>
     <app-dashboard-card name="Leaves Approved" [count]="leaveApprovedCount()"></app-dashboard-card>
   </div>
-  <div class="px-6">
+  <div class="px-6 flex flex-col lg:flex-row gap-5 w-full">
     <app-chart1 [employeeNumber]="employeeCount()" [leaveNumber]="leaveCount()"></app-chart1>
+    <app-chart2 [leaveNumber]="leaveCount()" [leavesApprovedNumber]="leaveApprovedCount()" [leavesPendingNumber]="leavePendingCount()"></app-chart2>
   </div>
 </div>
 
