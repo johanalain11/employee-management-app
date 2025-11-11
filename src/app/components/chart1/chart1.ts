@@ -1,4 +1,4 @@
-import { Component, ViewChild, Input } from '@angular/core';
+import { Component, ViewChild, Input, signal, OnChanges, SimpleChanges } from '@angular/core';
 import { NgApexchartsModule } from 'ng-apexcharts';
 
 import {
@@ -26,7 +26,7 @@ export type ChartOptions = {
   templateUrl: './chart1.html',
   styleUrl: './chart1.css'
 })
-export class Chart1 {
+export class Chart1 implements OnChanges{
 
   @ViewChild("chart") chart = new ChartComponent;
   public chartOptions: Partial<ChartOptions>;
@@ -34,7 +34,11 @@ export class Chart1 {
   @Input() leaveNumber: number = 0;
 
   constructor() {
-    this.chartOptions = {
+    this.chartOptions = this.initChartOptions();
+  }
+
+  private initChartOptions(): Partial<ChartOptions> {
+    return {
       series: [
         {
           name: "Employees",
@@ -68,6 +72,25 @@ export class Chart1 {
         }
       }
     };
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['employeeNumber'] || changes['leaveNumber']) {
+      this.updateChartData();
+    }
+  }
+
+  private updateChartData(): void {
+    this.chartOptions.series = [
+      {
+        name: "Employees",
+        data: [0, this.employeeNumber]
+      },
+      {
+        name: "Leaves",
+        data: [0, this.leaveNumber]
+      }
+    ];
   }
 
   public generateData(baseval: any, count: any, yrange: any) {
