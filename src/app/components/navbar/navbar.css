@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 .logo {
-  @apply flex space-x-4 items-center text-3xl font-semibold;
+  @apply flex space-x-4 ml-2 items-center text-xl md:text-3xl font-semibold;
 }
 
 .nav-9 .linktext{
@@ -9,7 +9,7 @@
   top:-3px;
   text-align:center;
   position:relative;
-  padding: 0px 7px;
+  padding: 0px 4px;
   z-index:2;
   color:#ffffff;
   text-decoration:none;
