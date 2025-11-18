@@ -7,6 +7,13 @@
   animation: bounceInLeft 1s ease both;
 }
 
+.section3 {
+  background-image: url('../../assets/images/pattern1.jpg');
+  background-position: fixed;
+  background-size: contain;
+  background-attachment: fixed;
+}
+
 @keyframes bounceInLeft {
   0% {
     opacity: 0;
