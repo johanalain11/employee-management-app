@@ -1,10 +1,10 @@
 import { Component, inject, HostListener, AfterViewInit, ElementRef } from '@angular/core';
 import { Navbar } from '../../components/navbar/navbar';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-about',
-  imports: [Navbar],
+  imports: [Navbar, RouterLink],
   templateUrl: './about.html',
   styleUrl: './about.css'
 })

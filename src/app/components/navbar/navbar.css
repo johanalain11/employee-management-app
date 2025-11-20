@@ -85,3 +85,7 @@
   transform:scale(1.3);
   -webkit-transform:scale(1.3);
 }
+
+.navbar-item {
+  @apply text-lg font-medium hover:text-blue-600 transition ease-in-out duration-300 focus:bg-blue-800 focus:text-white w-full text-center rounded-lg;
+}

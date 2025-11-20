@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 export class Employee implements OnInit{
 
   modalTitle = '';
+  showModal = false;
 
   employees: EmployeeModel[] = [];
   employeeService = inject(EmployeeService);
@@ -22,7 +23,6 @@ export class Employee implements OnInit{
   employeeObj = new EmployeeClass();
 
   @ViewChild("newModal") newModal!: ElementRef;
-  @ViewChild("tableContainer") tableContainer!: ElementRef;
   deptList$: Observable<any[]> = new Observable<any[]>();
   roleList$: Observable<any[]> = new Observable<any[]>();
 
@@ -30,6 +30,7 @@ export class Employee implements OnInit{
     this.getEmployees();
     this.deptList$ = this.employeeService.getDepartments();
     this.roleList$ = this.employeeService.getRoles();
+    this.showModal = false;
   }
 
   getEmployees() {
@@ -47,14 +48,14 @@ export class Employee implements OnInit{
     this.modalTitle = title;
     if(this.newModal) {
       this.newModal.nativeElement.style.display = "block";
-      this.tableContainer.nativeElement.style.opacity = "0.5";
+      this.showModal = true;
     }
   }
 
   closeModal() {
     if(this.newModal) {
       this.newModal.nativeElement.style.display = "none";
-      this.tableContainer.nativeElement.style.opacity = "1";
+      this.showModal = false;
     }
   }
 

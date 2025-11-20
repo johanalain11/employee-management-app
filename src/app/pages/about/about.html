@@ -28,25 +28,25 @@
         </div>
         <div class="text-gray-700 font-light leading-relaxed">
           <h3 class="font-semibold text-2xl mb-3 text-black">At Employee Management, our mission is to streamline and
-            enhance the way organizations <span class="text-yellow-600"> manage their workforce.</span> </h3>
+            enhance the way organizations <span class="text-yellow-600 underline-offset-4 underline decoration-3"> manage their workforce.</span> </h3>
           We are dedicated to providing innovative solutions that simplify HR processes, improve employee engagement,
           and foster a productive work environment. Our goal is to empower businesses of all sizes to efficiently handle
           employee data.
         </div>
       </div>
-      <div class="grid md:grid-cols-2 flex-col-reverse items-center gap-10">
-        <div class="text-gray-700 font-light leading-relaxed">
+      <div class="grid md:grid-cols-2 items-center gap-10">
+        <div class="text-gray-700 font-light leading-relaxed order-2 md:order-1">
           <h3 class="font-semibold text-2xl mb-3 text-black">We offer a comprehensive Employee Management System
-            designed <span class="text-yellow-600 text-shadow-md text-shadow-yellow-200"> to meet the diverse
+            designed <span class="text-yellow-600 underline-offset-4 underline decoration-3"> to meet the diverse
               needs</span> of modern organizations.</h3>
           Our platform includes features such as employee records management, attendance tracking, performance
           evaluations, and reporting tools. By leveraging cutting-edge technology, we provide a user-friendly interface
           that allows HR professionals and managers to easily access and manage employee information.
         </div>
-        <div class="space-x-8">
+        <div class="space-x-8 order-1 md:order-2">
           <h2 class="text-3xl md:text-4xl font-bold text-center text-blue-800">What We Do</h2>
           <img src="photo2.jpeg" alt="Photo 2"
-            class="w-full h-48 md:h-72 object-cover rounded-4xl my-4 shadow-lg hover:scale-105 transition ease-in-out duration-300" />
+            class="w-full h-48 md:h-72 object-cover animatable rounded-4xl my-4 shadow-lg hover:scale-105 transition ease-in-out duration-300" />
         </div>
       </div>
     </div>
@@ -86,7 +86,7 @@
             </div>
             <div class="text-black-700 font-light leading-relaxed">
               <h3 class="font-semibold text-2xl mb-3">At Employee Management, our mission is to streamline and enhance
-                the way organizations <span class="text-yellow-500"> manage their workforce.</span> </h3>
+                the way organizations <span class="text-yellow-500 underline-offset-4 underline decoration-3"> manage their workforce.</span> </h3>
               We are dedicated to providing innovative solutions that simplify HR processes, improve employee
               engagement, and foster a productive work environment. Our goal is to empower businesses of all sizes to
               efficiently handle employee data.
@@ -98,15 +98,15 @@
 
     <div class=" md:min-h-80 h-full">
       <div class="w-full h-48 md:h-70 opacity-90 overflow-hidden absolute -z-10">
-        <img src="bg3.jpg" alt="Background 2" class="w-full h-full object-cover" />
+        <img src="bg3.jpg" alt="Background 2" class="w-full h-full object-cover mask-alpha mask-b-from-blue-200 mask-b-from-60% mask-b-to-transparent" />
       </div>
       <div
         class="w-full h-full flex flex-col py-10 space-y-5 justify-center items-center text-shadow-sm text-shadow-gray-600 max-w-6xl mx-auto">
-        <h2 class="text-6xl text-white text-shadow-black text-shadow-sm font-bold text-center">TESTIMONIALS</h2>
+        <h2 class="text-5xl md:text-6xl text-white text-shadow-black text-shadow-sm font-bold text-center">TESTIMONIALS</h2>
         <p class="text-black text-xl">What Happy Clients Say</p>
 
         <div
-          class="max-w-sm w-full text-shadow-none bg-white shadow-xl rounded-2xl overflow-hidden transform hover:scale-105 transition-transform duration-300">
+          class="max-w-xs md:max-w-sm w-full text-shadow-none bg-white shadow-xl rounded-2xl overflow-hidden transform hover:scale-105 hover:skew-x-2 transition-transform duration-300">
           <div class="p-6 sm:p-8">
             <div class="flex justify-between items-center mb-4">
               <div class="flex items-center space-x-2">
@@ -150,27 +150,26 @@
       </div>
     </div>
 
-    <div class="bg-gray-900 w-full">
-
+    <div class="bg-gray-800 w-full">
 
       <footer class="bg-neutral-primary-soft">
         <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
           <div class="md:flex md:justify-between">
             <div class="mb-6 md:mb-0">
-              <a href="https://flowbite.com/" class="flex items-center">
-                <img src="https://flowbite.com/docs/images/logo.svg" class="h-7 me-3" alt="FlowBite Logo" />
+              <a routerLink="/home" class="flex items-center">
+                <img src="logo2.png" class="h-8 me-3" alt="Logo" />
                 <span class="text-heading self-center text-2xl font-semibold whitespace-nowrap">Employee Management</span>
               </a>
             </div>
-            <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+            <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3 text-gray-400">
               <div>
                 <h2 class="mb-6 text-sm font-semibold text-heading uppercase">Resources</h2>
                 <ul class="text-body font-medium">
                   <li class="mb-4">
-                    <a href="https://flowbite.com/" class="hover:underline">Flowbite</a>
+                    <a routerLink="/home" class="hover:underline">Home</a>
                   </li>
                   <li>
-                    <a href="https://tailwindcss.com/" class="hover:underline">Tailwind CSS</a>
+                    <a routerLink="/about" class="hover:underline">About Us</a>
                   </li>
                 </ul>
               </div>
@@ -178,10 +177,10 @@
                 <h2 class="mb-6 text-sm font-semibold text-heading uppercase">Follow us</h2>
                 <ul class="text-body font-medium">
                   <li class="mb-4">
-                    <a href="https://github.com/themesberg/flowbite" class="hover:underline ">Github</a>
+                    <a href="https://github.com/johanalain11" class="hover:underline ">Github</a>
                   </li>
                   <li>
-                    <a href="https://discord.gg/4eeurUVvTy" class="hover:underline">Discord</a>
+                    <a href="https://discord.gg/" class="hover:underline" aria-disabled="true">Discord</a>
                   </li>
                 </ul>
               </div>
@@ -200,7 +199,7 @@
           </div>
           <hr class="my-6 border-default sm:mx-auto lg:my-8" />
           <div class="sm:flex sm:items-center sm:justify-between">
-            <span class="text-sm text-body sm:text-center">© 2025 <a href="https://flowbite.com/"
+            <span class="text-sm text-body sm:text-center">© 2025 <a routerLink="/home"
                 class="hover:underline">Employee Management™</a>. All Rights Reserved.
             </span>
             <div class="flex mt-4 sm:justify-center sm:mt-0">

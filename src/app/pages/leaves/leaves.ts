@@ -14,6 +14,8 @@ import { DatePipe } from '@angular/common';
 export class Leaves implements OnInit{
 
   @ViewChild("newModal") newModal!: ElementRef;
+  showModal = false;
+
   employeeService = inject(EmployeeService);
 
   leaveList: LeaveModel[] = [];
@@ -22,6 +24,7 @@ export class Leaves implements OnInit{
   ngOnInit() {
     this.loadLeaves();
     this.loadLeaveApprovals();
+    this.showModal = false;
   }
 
   leaveForm: FormGroup = new FormGroup({
@@ -48,12 +51,14 @@ export class Leaves implements OnInit{
   openModal() {
     if(this.newModal) {
       this.newModal.nativeElement.style.display = "block";
+      this.showModal = true;
     }
   }
 
   closeModal() {
     if(this.newModal) {
       this.newModal.nativeElement.style.display = "none";
+      this.showModal = false;
     }
   }
 
