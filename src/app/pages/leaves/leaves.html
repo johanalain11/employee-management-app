@@ -4,7 +4,7 @@
     <button class="bg-blue-500 text-white px-4 mr-4 rounded" (click)="openModal()">Add leave</button>
   </div>
 
-  <form [formGroup]="leaveForm" #newModal class="hidden max-w-3xl bg-white p-3 rounded-lg shadow-2xl mb-6 fixed inset-0 top-20 left-1/2 transform -translate-x-1/2 z-50" role="dialog" aria-modal="true">
+  <form [formGroup]="leaveForm" #newModal class="hidden w-max md:max-w-3xl mx-4 bg-white p-3 rounded-lg shadow-2xl mb-6 absolute md:fixed inset-0 top-20 left-1/2 transform -translate-x-1/2 z-50" role="dialog" aria-modal="true">
     <div class="flex justify-between items-center mb-6 text-2xl">
       <h2 class="font-bold text-gray-700">Add Leave Request</h2>
       <button type="button" class="text-gray-500 bg-gray-100 font-extralight mr-2 px-2 py-1 rounded-lg transition ease-in-out duration-300 hover:text-white hover:bg-red-500 hover:scale-105 hover:font-light" (click)="closeModal()">X</button>
@@ -19,7 +19,7 @@
           <option value="Casual Leave">Casual Leave</option>
           <option value="Earned Leave">Earned Leave</option>
           <option value="Annual Leave">Annual Leave</option>
-          <option value="Personal Leave">Personal Leave</option>
+          <option value="Personal Leave">Pecol-sparsonal Leave</option>
           <option value="Maternity Leave">Maternity Leave</option>
           <option value="Emergency Leave">Emergency Leave</option>
         </select>
@@ -32,15 +32,15 @@
         <label for="input-label" class="block text-sm font-medium mb-2">To Date</label>
         <input type="date" id="input-label" formControlName="toDate" class="py-3 px-4 block w-full rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 border border-neutral-300 placeholder-neutral-500 text-neutral-500" placeholder="you@site.com" autofocus="">
       </div>
-      <div class="p-4 overflow-y-auto col-span-2">
+      <div class="p-4 overflow-y-auto md:col-span-2">
         <label for="input-label" class="block text-sm font-medium mb-2">Number of Days</label>
         <input type="number" id="input-label" formControlName="noOfDays" class="py-3 px-4 block w-full rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 border border-neutral-300 placeholder-neutral-500 text-neutral-500" placeholder="********" autofocus="">
       </div>
-      <div class="p-4 overflow-y-auto col-span-2">
+      <div class="p-4 overflow-y-auto md:col-span-2">
         <label for="input-label" class="block text-sm font-medium mb-2">Details/ Reason</label>
         <input type="text" id="input-label" formControlName="details" class="py-3 px-4 block w-full rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 border border-neutral-300 placeholder-neutral-500 text-neutral-500" placeholder="********" autofocus="">
       </div>
-      <div class="p-4 overflow-y-auto col-span-2 text-end">
+      <div class="p-4 overflow-y-auto md:col-span-2 text-end">
         <button type="button" class="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-white bg-blue-600 hover:bg-blue-700 focus:outline-hidden hover:scale-105 transition ease-in-out duration-300 focus:ring-4 focus:ring-blue-300 disabled:opacity-50 disabled:pointer-events-none px-5 py-3 dark:focus:ring-blue-900" (click)="onSaveLeave()">Add Leave</button>
       </div>
     </div>
