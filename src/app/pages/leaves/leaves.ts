@@ -19,7 +19,7 @@ export class Leaves implements OnInit{
   employeeService = inject(EmployeeService);
 
   leaveList: LeaveModel[] = [];
-  leaveApprovalList: any[] = [];
+  leaveApprovalList: LeaveModel[] = [];
 
   ngOnInit() {
     this.loadLeaves();
