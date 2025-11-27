@@ -1,12 +1,7 @@
 # 🧑‍💼 Employee Management App  
 Application Angular pour la gestion des employés
 
-![Angular](https://img.shields.io/badge/Angular-20-red?style=for-the-badge&logo=angular)  
-![TailwindCSS](https://img.shields.io/badge/TailwindCSS-Design-38B2AC?style=for-the-badge&logo=tailwind-css)  
-![TypeScript](https://img.shields.io/badge/TypeScript-Lang-blue?style=for-the-badge&logo=typescript)  
-![Node.js](https://img.shields.io/badge/Node.js-22-green?style=for-the-badge&logo=node.js)  
-![MIT License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)  
-![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen?style=for-the-badge)  
+![Angular](https://img.shields.io/badge/Angular-20-red?style=for-the-badge&logo=angular)   ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-Design-38B2AC?style=for-the-badge&logo=tailwind-css)  ![TypeScript](https://img.shields.io/badge/TypeScript-Lang-blue?style=for-the-badge&logo=typescript)  ![Node.js](https://img.shields.io/badge/Node.js-22-green?style=for-the-badge&logo=node.js)  ![MIT License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)  ![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen?style=for-the-badge)  
 
 ---
 
@@ -19,8 +14,7 @@ L’application permet notamment :
 - ➕ Ajouter un employé  
 - 📝 Modifier un employé  
 - ❌ Supprimer un employé  
-- 📄 Afficher la liste des employés  
-- 🔍 Filtrer et rechercher des employés  
+- 📄 Afficher la liste des employés   
 - 🗓️ Gérer les *leaves* (permissions / congés)  
 - 🔌 Communiquer avec une API via un **EmployeeService**  
 - 🧩 Architecture propre et modulable : composants, services, modèles  
