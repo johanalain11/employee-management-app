@@ -106,7 +106,7 @@ ng serve
 ![Interface](./public/apercu1.png "Interface de l'application")
 
 - Page employés
-![Interface](./public/apercu1.png "Interface de l'application")
+![Interface](./public/apercu2.png "Interface de l'application")
 
 ---
 
