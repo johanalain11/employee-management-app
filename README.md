@@ -42,7 +42,7 @@ L’application permet notamment :
 - 🅰️ **Angular 20** — Framework principal  
 - 🎨 **TailwindCSS** — Styles utilitaires modernes  
 - 🟦 **TypeScript** — Typage robuste  
-- 🌐 **API interne du projet** — Gestion des employés et congés 👉
+- 🌐 **API du projet** — Données des employés et congés 👉
 [FreeApi](https://freeapi.miniprojectideas.com/index.html)  
 - ⚡ **Node.js 22** — Environnement d’exécution  
 
